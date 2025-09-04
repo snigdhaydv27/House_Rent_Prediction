@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Rent Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>House Rent Predictor</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="form-group">
+                <label>Number of Bedrooms:</label>
+                <input type="number" name="bedroom" step="0.5" required>
+            </div>
+            <div class="form-group">
+                <label>Layout Type:</label>
+                <select name="layout_type" required>
+                    <option value="" selected disabled>Select House Layout</option>
+                    <option value="BHK">BHK</option>
+                    <option value="RK">RK</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Property Type:</label>
+                <select name="property_type" required>
+                    <option value="" selected disabled>Select Property Type</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Independent House">Independent House</option>
+                    <option value="Studio Apartment">Studio Apartment</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>City:</label>
+                <select name="city" required>
+                    <option value="" selected disabled>Select city</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Chennai">Chennai</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Locality:</label>
+                <input type="text" name="locality" required>
+            </div>
+            <div class="form-group">
+                <label>Area (sq ft):</label>
+                <input type="number" name="area" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>Furnishing Type:</label>
+                <select name="furnish_type" required>
+                    <option value="Furnished">Furnished</option>
+                    <option value="Semi-Furnished">Semi-Furnished</option>
+                    <option value="Unfurnished">Unfurnished</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Number of Bathrooms:</label>
+                <input type="number" name="bathroom" step="0.5" required>
+            </div>
+            <button type="submit">Predict Rent</button>
+        </form>
+    </div>
+</body>
+</html>
